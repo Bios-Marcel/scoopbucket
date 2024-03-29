@@ -10,8 +10,7 @@
         }
     },
     "post_install": [
-        "$BucketDir = Find-BucketDirectory -Root -Name $bucket",
-        "$UtilsPath = $BucketDir | Join-Path -ChildPath \"scripts\\ModifyPSProfile.psm1\"",
+        "$UtilsPath = $bucketsdir | Join-Path -ChildPath \"extras\\scripts\\ModifyPSProfile.psm1\"",
         "Unblock-File $UtilsPath",
         "Import-Module $UtilsPath",
         "Add-ProfileContent -Content 'spoon completion powershell | Out-String | Invoke-Expression'",
@@ -19,8 +18,7 @@
     ],
     "bin": "spoon.exe",
     "pre_uninstall": [
-        "$BucketDir = Find-BucketDirectory -Root -Name $install.bucket",
-        "$UtilsPath = $BucketDir | Join-Path -ChildPath \"scripts\\ModifyPSProfile.psm1\"",
+        "$UtilsPath = $bucketsdir | Join-Path -ChildPath \"extras\\scripts\\ModifyPSProfile.psm1\"",
         "Unblock-File $UtilsPath",
         "Import-Module $UtilsPath",
         "Remove-ProfileContent -Content 'spoon completion powershell \\| Out-String \\| Invoke-Expression'",
