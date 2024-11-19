@@ -16,7 +16,7 @@
         "Add-ProfileContent -Content 'ezvn completion powershell | Out-String | Invoke-Expression'",
         "Remove-Module ModifyPSProfile -ErrorAction SilentlyContinue"
     ],
-    "bin": "spoon.exe",
+    "bin": "ezvn.exe",
     "pre_uninstall": [
         "$UtilsPath = $bucketsdir | Join-Path -ChildPath \"extras\\scripts\\ModifyPSProfile.psm1\"",
         "Unblock-File $UtilsPath",
